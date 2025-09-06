@@ -150,18 +150,18 @@
           "visual-tweaks": {
             "label": "Poprawki wizualne",
             "submenu": {
+              "like-buttons": {
+                "default": "Domyślne",
+                "force-show": "Wymuś pokazanie",
+                "hide": "Ukryj",
+                "label": "Przyciski polubienia"
+              },
               "custom-window-title": {
                 "label": "Niestandardowy tytuł okna",
                 "prompt": {
                   "label": "Podaj niestandardowy tytuł okna (zostaw puste, aby to wyłączyć):",
                   "placeholder": "Przykład: YouTube Music"
                 }
-              },
-              "like-buttons": {
-                "default": "Domyślne",
-                "force-show": "Wymuś pokazywanie",
-                "hide": "Ukryj",
-                "label": "Przyciski polubienia"
               },
               "remove-upgrade-button": "Usuń przycisk subskrypcji premium",
               "theme": {
@@ -421,6 +421,19 @@
         }
       }
     },
+    "custom-output-device": {
+      "description": "Skonifugurj niestandardowe urządzenie wyjściowe dla utworów",
+      "menu": {
+        "device-selector": "Wybierz Urządzenie"
+      },
+      "name": "Niestandardowe Urządzenie Wyjściowe",
+      "prompt": {
+        "device-selector": {
+          "label": "Wybierz urządzenie które ma zostać użyte",
+          "title": "Wybierz Urządzenie Wyjściowe"
+        }
+      }
+    },
     "disable-autoplay": {
       "description": "Wyłącza automatyczne odtwarzanie utworów",
       "menu": {
@@ -445,6 +458,14 @@
         "hide-github-button": "Ukryj przycisk do GitHub",
         "play-on-youtube-music": "Odtwórz w YouTube Music",
         "set-inactivity-timeout": "Ustaw limit czasu bezczynności"
+        "set-status-display-type": {
+          "label": "Status text",
+          "submenu": {
+            "youtube-music": "Słucha YouTube Music",
+            "artist": "Słucha {nazwa artysty}",
+            "title": "Słucha {tytuł piosenki}"
+          }
+        }
       },
       "name": "Discord Rich Presence",
       "prompt": {
@@ -852,6 +873,27 @@
     "touchbar": {
       "description": "Dodaje widżet do paska dotykowego dla użytkowników systemu macOS",
       "name": "Pasek dotykowy"
+    },
+    "transparent-player": {
+      "description": "Okno odtwarzacza staje się transparentne",
+      "name": "Odtwarzacz Przezroczysty",
+      "menu": {
+        "opacity": {
+          "label": "Przezroczystość",
+          "submenu": {
+            "percent": "{{opacity}}%"
+          }
+        },
+        "type": {
+          "label": "Typ",
+          "submenu": {
+            "acrylic": "Akrylowany",
+            "mica": "Mica",
+            "tabbed": "Zakładka",
+            "none": "Zwykły"
+          }
+        }
+      }
     },
     "tuna-obs": {
       "description": "Integracja z wtyczką OBS Tuna",
