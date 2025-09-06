@@ -15,7 +15,7 @@ import {
   type BrowserWindowConstructorOptions,
 } from 'electron';
 import enhanceWebRequest, {
-  BetterSession,
+  type BetterSession,
 } from '@jellybrick/electron-better-web-request';
 import is from 'electron-is';
 import unhandled from 'electron-unhandled';
@@ -59,7 +59,7 @@ import ErrorHtmlAsset from '@assets/error.html?asset';
 
 import { defaultAuthProxyConfig } from '@/plugins/auth-proxy-adapter/config';
 
-import { type PluginConfig } from '@/types/plugins';
+import type { PluginConfig } from '@/types/plugins';
 
 // Catch errors and log them
 unhandled({
@@ -349,10 +349,12 @@ async function createMainWindow() {
     delete decorations.titleBarStyle;
   }
 
-  const win = new BrowserWindow({
+  const electronWindowSettings: Electron.BrowserWindowConstructorOptions = {
     icon,
     width: windowSize.width,
     height: windowSize.height,
+    minWidth: 325,
+    minHeight: 425,
     backgroundColor: '#000',
     show: false,
     webPreferences: {
@@ -367,7 +369,10 @@ async function createMainWindow() {
           }),
     },
     ...decorations,
-  });
+  };
+
+  const win = new BrowserWindow(electronWindowSettings);
+
   await initHook(win);
   initTheme(win);
 
