@@ -459,7 +459,7 @@
         "play-on-youtube-music": "Odtwórz w YouTube Music",
         "set-inactivity-timeout": "Ustaw limit czasu bezczynności"
         "set-status-display-type": {
-          "label": "Status text",
+          "label": "Tekst statusu",
           "submenu": {
             "youtube-music": "Słucha YouTube Music",
             "artist": "Słucha {nazwa artysty}",
@@ -758,6 +758,7 @@
           "token": "Podaj token użytkownika ListenBrainz"
         },
         "scrobble-alternative-title": "Użyj alternatywnych tytułów",
+        "scrobble-alternative-artist": "Użyj alternatywnych nazw artystów",
         "scrobble-other-media": "Scrobbluj pozostałe multimedia"
       },
       "name": "Scrobblowanie",
