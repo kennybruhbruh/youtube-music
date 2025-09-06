@@ -457,7 +457,7 @@
         "hide-duration-left": "Ukryj pozostały czas trwania",
         "hide-github-button": "Ukryj przycisk do GitHub",
         "play-on-youtube-music": "Odtwórz w YouTube Music",
-        "set-inactivity-timeout": "Ustaw limit czasu bezczynności"
+        "set-inactivity-timeout": "Ustaw limit czasu bezczynności",
         "set-status-display-type": {
           "label": "Tekst statusu",
           "submenu": {
