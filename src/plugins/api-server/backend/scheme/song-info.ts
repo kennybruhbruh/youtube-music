@@ -5,6 +5,7 @@ import { MediaType } from '@/providers/song-info';
 export type ResponseSongInfo = z.infer<typeof SongInfoSchema>;
 export const SongInfoSchema = z.object({
   title: z.string(),
+  displayTitle: z.string().optional(),
   artist: z.string(),
   views: z.number(),
   uploadDate: z.string().optional(),

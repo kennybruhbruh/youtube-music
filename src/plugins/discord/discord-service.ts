@@ -96,10 +96,15 @@ export class DiscordService {
   ): SetActivity {
     padHangulFields(songInfo);
 
+    const titleToUse = songInfo.displayTitle ?? songInfo.title;
+    if (dev()) {
+      console.log('[Discord] Using title:', titleToUse, '(displayTitle:', songInfo.displayTitle, ', title:', songInfo.title, ')');
+    }
+
     const activityInfo: SetActivity = {
       type: ActivityType.Listening,
       statusDisplayType: config.statusDisplayType,
-      details: truncateString(songInfo.alternativeTitle ?? songInfo.title, 128), // Song title
+      details: truncateString(titleToUse, 128), // Song title
       detailsUrl: songInfo.url ?? undefined,
       state: truncateString(songInfo.tags?.at(0) ?? songInfo.artist, 128), // Artist name
       stateUrl: songInfo.artistUrl,

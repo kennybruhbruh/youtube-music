@@ -29,6 +29,7 @@ export enum MediaType {
 export interface SongInfo {
   title: string;
   alternativeTitle?: string;
+  displayTitle?: string;
   artist: string;
   artistUrl?: string;
   views: number;
@@ -72,6 +73,7 @@ const handleData = async (
   const songInfo: SongInfo = {
     title: '',
     alternativeTitle: '',
+    displayTitle: '',
     artist: '',
     artistUrl: '',
     views: 0,
@@ -108,7 +110,9 @@ const handleData = async (
 
   const { videoDetails } = data;
   if (videoDetails) {
+    songInfo.displayTitle = videoDetails.title; // Store the literal title with all features
     songInfo.title = cleanupName(videoDetails.title);
+    console.log('[SongInfo] Raw title:', videoDetails.title, '-> displayTitle:', songInfo.displayTitle, ', cleaned title:', songInfo.title);
     songInfo.artist = cleanupName(videoDetails.author);
     songInfo.views = Number(videoDetails.viewCount);
     songInfo.songDuration = Number(videoDetails.lengthSeconds);
