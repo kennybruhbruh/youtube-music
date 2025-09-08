@@ -88,7 +88,7 @@ export default createPlugin({
       data.cover = songInfo.imageSrc;
       data.cover_url = songInfo.imageSrc;
       data.album_url = songInfo.imageSrc;
-      data.title = songInfo.title;
+      data.title = songInfo.displayTitle ?? songInfo.title;
       data.artists = [songInfo.artist];
       data.status = songInfo.isPaused ? 'stopped' : 'playing';
       data.isPaused = songInfo.isPaused;

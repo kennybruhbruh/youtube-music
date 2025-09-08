@@ -43,7 +43,7 @@ export default (
     }
 
     savedNotification = new Notification({
-      title: songInfo.title || 'Playing',
+      title: songInfo.displayTitle ?? songInfo.title || 'Playing',
       body: songInfo.artist,
       icon: iconSrc,
       silent: true,
@@ -179,7 +179,7 @@ export default (
             <text>ㅤ</text>
             <group>
                 <subgroup>
-                    <text hint-style="body">${songInfo.title}</text>
+                    <text hint-style="body">${songInfo.displayTitle ?? songInfo.title}</text>
                     <text hint-style="captionSubtle">${songInfo.artist}</text>
                 </subgroup>
                 ${xmlMoreData(songInfo)}

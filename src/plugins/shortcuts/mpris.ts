@@ -332,7 +332,7 @@ function registerMPRIS(win: BrowserWindow) {
           ...(songInfo.imageSrc
             ? { 'mpris:artUrl': songInfo.imageSrc }
             : undefined),
-          'xesam:title': songInfo.title,
+          'xesam:title': songInfo.displayTitle ?? songInfo.title,
           'xesam:url': songInfo.url,
           'xesam:artist': [songInfo.artist],
           'mpris:trackid': player.objectPath(

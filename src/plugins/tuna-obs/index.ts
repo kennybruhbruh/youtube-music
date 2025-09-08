@@ -87,7 +87,7 @@ export default createPlugin({
           cover: songInfo.imageSrc ?? '',
           cover_url: songInfo.imageSrc ?? '',
           album_url: songInfo.imageSrc ?? '',
-          title: songInfo.title,
+          title: songInfo.displayTitle ?? songInfo.title,
           alternativeTitle: songInfo.alternativeTitle ?? '',
           artists: [songInfo.artist],
           status: songInfo.isPaused ? 'stopped' : 'playing',
