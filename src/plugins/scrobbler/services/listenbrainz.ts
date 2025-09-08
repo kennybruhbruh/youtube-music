@@ -79,7 +79,9 @@ function createRequestBody(
   const title =
     config.alternativeTitles && songInfo.alternativeTitle !== undefined
       ? songInfo.alternativeTitle
-      : songInfo.title;
+      : songInfo.displayTitle ?? songInfo.title;
+
+  console.log('[ListenBrainz] Using title:', title, '(displayTitle:', songInfo.displayTitle, ', alternativeTitle:', songInfo.alternativeTitle, ', title:', songInfo.title, ')');
 
   const artist =
     config.alternativeArtist && songInfo.tags?.at(0) !== undefined

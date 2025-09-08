@@ -88,7 +88,7 @@ export default createPlugin({
         // Song information changed, so lets update the touchBar
 
         // Set the song title
-        songTitle.label = songInfo.title;
+        songTitle.label = songInfo.displayTitle ?? songInfo.title;
 
         // Changes the pause button if paused
         pausePlayButton.label = songInfo.isPaused ? '▶️' : '⏸';

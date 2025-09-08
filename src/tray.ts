@@ -137,7 +137,7 @@ export const setUpTray = (app: Electron.App, win: Electron.BrowserWindow) => {
       tray.setToolTip(
         t('main.tray.tooltip.with-song-info', {
           artist: songInfo.artist,
-          title: songInfo.title,
+          title: songInfo.displayTitle ?? songInfo.title,
         }),
       );
 
